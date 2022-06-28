@@ -3,7 +3,6 @@ package com.example.simplecrudjava.service;
 import com.example.simplecrudjava.model.User;
 import com.example.simplecrudjava.model.UserModel;
 import com.example.simplecrudjava.repository.UserRepository;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
