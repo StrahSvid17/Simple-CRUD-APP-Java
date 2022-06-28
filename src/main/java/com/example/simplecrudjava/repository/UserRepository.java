@@ -2,6 +2,7 @@ package com.example.simplecrudjava.repository;
 
 import com.example.simplecrudjava.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 
     @Transactional
+    @Modifying
     @Query("update users u set u.username = ?1, u.email = ?2 where u.id = ?3")
     void updateUser(String username, String email, Long id);
 }
