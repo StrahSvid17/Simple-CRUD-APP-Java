@@ -25,8 +25,8 @@ public class UserController {
         return service.addNewUser(user);
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> dropUser(Long id) {
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> dropUser(@PathVariable Long id) {
         return service.deleteUser(id);
     }
 
