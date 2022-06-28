@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-@Entity(name = "users_tbl")
+@Entity(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
