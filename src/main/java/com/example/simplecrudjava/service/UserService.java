@@ -1,12 +1,14 @@
 package com.example.simplecrudjava.service;
 
 import com.example.simplecrudjava.model.User;
+import com.example.simplecrudjava.model.UserModel;
 import com.example.simplecrudjava.repository.UserRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -53,11 +55,8 @@ public class UserService {
                 userModel.getId());
         return ResponseEntity.ok("User has been updated");
     }
-}
 
-@Data
-class UserModel {
-    private Long id;
-    private String username;
-    private String email;
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 }
